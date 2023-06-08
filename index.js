@@ -10,10 +10,11 @@ class Formatter {
   static titleize(string) {
     // takes in a string and capitalizes all words in a sentence except the, a, an, but, of, and, for, at, by, and from; and always captalizes the first word
     // 
-    return string.split(" ").map(word =>{
+    const capitalString = string.split(" ").map(word => {
       const excludeWords = ["the", "a", "an", "but", "of", "and", "for", "at", "by", "from", "in"]
       return excludeWords.includes(word) ? [word] : word[0].toUpperCase() + word.slice(1)
     }).join(" ")
+    return capitalString.charAt(0).toUpperCase() + capitalString.slice(1)
   }
 }
 console.log("Expect: Letter")
